@@ -1,4 +1,9 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+
+using NBUY_MOD.Services;
+using System.Web.Mvc;
+
+using NBUY_MOD.Entities;
 
 namespace NBUY_MOD.Controllers
 {
@@ -7,6 +12,7 @@ namespace NBUY_MOD.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            List<News> list = new NewsServices().GetNews();
             return View();
         }
     }
