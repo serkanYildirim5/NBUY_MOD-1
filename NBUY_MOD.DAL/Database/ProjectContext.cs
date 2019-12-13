@@ -1,8 +1,8 @@
-﻿using NBUY_MOD.Entities;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
 using NBUY_MOD.DAL.Mappings;
+using NBUY_MOD.Entities.Entity;
 
 namespace NBUY_MOD.DAL.Database
 {
@@ -13,6 +13,8 @@ namespace NBUY_MOD.DAL.Database
         {
             Configuration.LazyLoadingEnabled = false;
             //Database.Connection.ConnectionString = @"Server=;Database=;Uid=;Pwd=;";
+
+            var value = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
         }
 
         public DbSet<News> News { get; set; }

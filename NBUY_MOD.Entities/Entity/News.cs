@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace NBUY_MOD.Entities
+namespace NBUY_MOD.Entities.Entity
 {
     public class News
     {

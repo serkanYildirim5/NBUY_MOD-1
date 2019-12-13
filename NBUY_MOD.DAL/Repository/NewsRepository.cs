@@ -2,7 +2,7 @@
 using System.Linq;
 
 using NBUY_MOD.DAL.Database;
-using NBUY_MOD.Entities;
+using NBUY_MOD.Entities.Entity;
 
 namespace NBUY_MOD.DAL.Repository
 {

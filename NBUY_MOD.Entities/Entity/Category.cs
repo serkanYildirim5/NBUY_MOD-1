@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-namespace NBUY_MOD.Entities
+namespace NBUY_MOD.Entities.Entity
 {
     public class Category
     {

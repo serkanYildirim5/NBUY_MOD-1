@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NBUY_MOD.DAL", "NBUY_MOD.DA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NBUY_MOD.Services", "NBUY_MOD.Services\NBUY_MOD.Services.csproj", "{5511A97B-C8B4-486C-95DF-4A9107E056A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NBUY_MOD.Helpers", "NBUY_MOD.Helpers\NBUY_MOD.Helpers.csproj", "{55DB3F9B-B71D-4A2E-A02E-5B0B7BBB063C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{5511A97B-C8B4-486C-95DF-4A9107E056A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5511A97B-C8B4-486C-95DF-4A9107E056A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5511A97B-C8B4-486C-95DF-4A9107E056A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55DB3F9B-B71D-4A2E-A02E-5B0B7BBB063C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55DB3F9B-B71D-4A2E-A02E-5B0B7BBB063C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55DB3F9B-B71D-4A2E-A02E-5B0B7BBB063C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55DB3F9B-B71D-4A2E-A02E-5B0B7BBB063C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
