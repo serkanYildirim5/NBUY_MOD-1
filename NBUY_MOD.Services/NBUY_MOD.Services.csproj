@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -53,6 +54,10 @@
     <ProjectReference Include="..\NBUY_MOD.Entities\NBUY_MOD.Entities.csproj">
       <Project>{230EEFC8-960B-4A29-BDA1-C0086FA05D3D}</Project>
       <Name>NBUY_MOD.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NBUY_MOD.Helpers\NBUY_MOD.Helpers.csproj">
+      <Project>{55DB3F9B-B71D-4A2E-A02E-5B0B7BBB063C}</Project>
+      <Name>NBUY_MOD.Helpers</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

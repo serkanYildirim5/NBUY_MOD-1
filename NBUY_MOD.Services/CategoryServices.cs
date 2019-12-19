@@ -1,25 +1,40 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Linq;
 
 using NBUY_MOD.DAL.Repository;
-using NBUY_MOD.Entities;
+using NBUY_MOD.Entities.DTO;
+using NBUY_MOD.Helpers.Extensions;
 
 namespace NBUY_MOD.Services
 {
-    //public class CategoryServices
-    //{
-    //    private readonly CategoryRepository _categoryRepository;
+    public class CategoryServices
+    {
+        private readonly CategoryRepository _categoryRepository;
+        private int _rowNumber;
+        public CategoryServices()
+        {
+            _categoryRepository = new CategoryRepository();
+            _rowNumber = Convert.ToInt32(ConfigurationManager.AppSettings["TopRowNumber"]);
+        }
 
-    //    public CategoryServices()
-    //    {
-    //        _categoryRepository = new CategoryRepository();
-    //    }
+        public List<CategoryDTO> GetCategoriesDTO()
+        {
+            var categories = _categoryRepository.GetAllCategories();
 
-    //    public List<Category> GetCategories()
-    //    {
-    //        var categories = _categoryRepository.GetAllCategories();
+            var categoryDto = categories.GetCategoryDto();
 
-    //        return categories;
+            return categoryDto;
+        }
 
-    //    }
-    //}
+        public List<CategoryDTO> GetTopCategoriesDTO()
+        {
+            var categories = _categoryRepository.GetAllCategories();
+
+            var categoryDto = categories.Take(_rowNumber).GetCategoryDto();
+
+            return categoryDto;
+        }
+    }
 }

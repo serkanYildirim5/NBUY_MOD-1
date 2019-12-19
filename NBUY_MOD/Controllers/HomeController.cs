@@ -4,6 +4,7 @@ using NBUY_MOD.Services;
 using System.Web.Mvc;
 
 using NBUY_MOD.Entities;
+using NBUY_MOD.Entities.DTO;
 using NBUY_MOD.Models;
 
 namespace NBUY_MOD.Controllers
@@ -19,15 +20,10 @@ namespace NBUY_MOD.Controllers
             _categoryServices = new CategoryServices();
         }
 
-        // GET: Home
-        ////////[HttpGet]
-        ////////[HttpPost]
-        //////[AcceptVerbs("GET", "POST")]
         public ActionResult Index()
         {
-            List<News> newList = _newsServices.GetNews();
-
-            List<Category> categoryList = _categoryServices.GetCategories();
+            List<NewsDTO> newList = _newsServices.GetNewsDTOs();
+            List<CategoryDTO> categoryList = _categoryServices.GetTopCategoriesDTO();
 
             var model = new HomeIndexViewModel
             {

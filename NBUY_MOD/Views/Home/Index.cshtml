@@ -9,7 +9,9 @@
     @foreach (var item in Model.Categories)
     {
         <div class="col">
-            @item.CategoryName
+            <a class=" btn btn-block btn-outline-primary">
+                @item.CategoryName
+            </a>
         </div>
     }
 </div>
@@ -25,7 +27,7 @@
                 <div class="card-body">
                     <h5 class="card-title">@item.NewsTitle</h5>
                     <h6 class="card-subtitle mb-2 text-muted">@item.NewsSubTitle</h6>
-                    <p class="card-text">@item.NewsContent</p>
+                    <p class="card-text">@item.NewsInformation</p>
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>

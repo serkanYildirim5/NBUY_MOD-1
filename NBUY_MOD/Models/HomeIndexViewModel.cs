@@ -1,13 +1,15 @@
 ﻿using System.Collections.Generic;
 
-using NBUY_MOD.Entities;
+using NBUY_MOD.Entities.DTO;
+
 //Extensions
 namespace NBUY_MOD.Models
 {
     public class HomeIndexViewModel
     {
-        public List<News> News { get; set; }
+        public List<NewsDTO> News { get; set; }
 
-        public List<Category> Categories { get; set; }
+        public List<CategoryDTO> Categories { get; set; }
+
     }
 }

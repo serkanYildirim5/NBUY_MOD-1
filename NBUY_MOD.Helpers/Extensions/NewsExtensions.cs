@@ -21,10 +21,9 @@ namespace NBUY_MOD.Helpers.Extensions
             return DTONews;
         }
 
-        public static List<NewsDTO> GetNewsDto(List<News> news)
+        public static List<NewsDTO> GetNewsDto(this IEnumerable<News> news)
         {
-            List<NewsDTO> newsList = new List<NewsDTO>();
-            newsList = news.Select(i => new NewsDTO
+            List<NewsDTO> newsList = news.Select(i => new NewsDTO
             {
                 NewsSubTitle = i.NewsSubTitle,
                 NewsTitle = i.NewsTitle,
