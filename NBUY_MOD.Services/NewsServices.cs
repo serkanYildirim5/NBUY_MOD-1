@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 
 using NBUY_MOD.DAL.Repository;
-using NBUY_MOD.Entities;
+using NBUY_MOD.Entities.DTO;
+using NBUY_MOD.Entities.Entity;
+using NBUY_MOD.Helpers.Extensions;
 
 namespace NBUY_MOD.Services
 {
@@ -14,21 +16,13 @@ namespace NBUY_MOD.Services
             _newsRepository = new NewsRepository();
         }
 
-        public List<News> GetNews()
+        public List<NewsDTO> GetNewsDTOs()
         {
-            var newsList = _newsRepository.GetAllNews();
+            List<News> newsList = _newsRepository.GetAllNews();
+            List<NewsDTO> dtoNewsList = newsList.GetNewsDto();
 
-            return newsList;
+            return dtoNewsList;
         }
 
-        //TODO burası hatalı kullanım olacak çünkü; EF Bağımlılığı var | SRP , OCP
-        //public List<News> GetAllNews()
-        //{
-        //    List<News> list = new List<News>();
-        //    using (ProjectContext database = new ProjectContext())
-        //    {
-        //        list = database.News.ToList();
-        //    }
-        //}
     }
 }
