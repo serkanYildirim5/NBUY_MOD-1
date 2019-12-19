@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{230EEFC8-960B-4A29-BDA1-C0086FA05D3D}</ProjectGuid>
+    <ProjectGuid>{5511A97B-C8B4-486C-95DF-4A9107E056A4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NBUY_MOD.Entities</RootNamespace>
-    <AssemblyName>NBUY_MOD.Entities</AssemblyName>
+    <RootNamespace>NBUY_MOD.Services</RootNamespace>
+    <AssemblyName>NBUY_MOD.Services</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -32,7 +32,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,11 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DTO\NewsDTO.cs" />
-    <Compile Include="Entity\Category.cs" />
-    <Compile Include="Entity\News.cs" />
+    <Compile Include="CategoryServices.cs" />
+    <Compile Include="NewsServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\NBUY_MOD.DAL\NBUY_MOD.DAL.csproj">
+      <Project>{C782720D-3FEE-4936-90B7-1D47B6F334F6}</Project>
+      <Name>NBUY_MOD.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NBUY_MOD.Entities\NBUY_MOD.Entities.csproj">
+      <Project>{230EEFC8-960B-4A29-BDA1-C0086FA05D3D}</Project>
+      <Name>NBUY_MOD.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

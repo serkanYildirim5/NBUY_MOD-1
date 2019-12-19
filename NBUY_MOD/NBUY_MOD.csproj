@@ -100,6 +100,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\HomeIndexViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -119,7 +120,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NBUY_MOD.Entities\NBUY_MOD.Entities.csproj">
+      <Project>{230EEFC8-960B-4A29-BDA1-C0086FA05D3D}</Project>
+      <Name>NBUY_MOD.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NBUY_MOD.Services\NBUY_MOD.Services.csproj">
+      <Project>{5511A97B-C8B4-486C-95DF-4A9107E056A4}</Project>
+      <Name>NBUY_MOD.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
