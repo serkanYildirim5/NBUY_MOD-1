@@ -97,6 +97,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -108,6 +109,11 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Edit.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -124,13 +130,15 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Admin\Views\Home\" />
-    <Folder Include="Areas\Admin\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NBUY_MOD.Entities\NBUY_MOD.Entities.csproj">
       <Project>{230EEFC8-960B-4A29-BDA1-C0086FA05D3D}</Project>
       <Name>NBUY_MOD.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NBUY_MOD.Helpers\NBUY_MOD.Helpers.csproj">
+      <Project>{55DB3F9B-B71D-4A2E-A02E-5B0B7BBB063C}</Project>
+      <Name>NBUY_MOD.Helpers</Name>
     </ProjectReference>
     <ProjectReference Include="..\NBUY_MOD.Services\NBUY_MOD.Services.csproj">
       <Project>{5511A97B-C8B4-486C-95DF-4A9107E056A4}</Project>

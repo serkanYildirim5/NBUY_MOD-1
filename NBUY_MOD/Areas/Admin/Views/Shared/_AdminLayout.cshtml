@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <title>@ViewBag.AdminTitle</title>
+
+    <link rel="stylesheet" href="~/Content/lib/boostrapv4/css/bootstrap.min.css" />
+    @RenderSection("customAdminStyles", false)
+</head>
+<body class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <a class="btn btn-success" href="@Url.Action("Index","Home", new { area=""})">
+                Anasayfa
+            </a>
+        </div>
+        <div class="col">
+            <a class="btn btn-info" href="@Url.Action("Index","Home", new {area="Admin"})">
+                DASHBOARD
+            </a>
+        </div>
+        <div class="col">
+            <a class="btn btn-warning" href="@Url.Action("Index","Category", new {area="Admin"})">
+                KATEGORILER
+            </a>
+        </div>
+    </div>
+    <div class="container">
+        @RenderBody()
+    </div>
+
+    <script src="~/Content/lib/jquery/jquery-3.3.1.js"></script>
+    <script src="~/Content/lib/boostrapv4/js/bootstrap.js"></script>
+
+    @RenderSection("customAdminScripts", false)
+
+</body>
+</html>
