@@ -11,12 +11,23 @@ namespace NBUY_MOD.DAL.Repository
         public List<Category> GetAllCategories()
         {
             List<Category> categories;
-            using (ProjectContext database = new ProjectContext())
+            using (var database = new ProjectContext())
             {
                 categories = database.Categories.ToList();
             }
 
             return categories;
+        }
+
+        public Category GetCategory(int id)
+        {
+            Category category;
+            using (var databaseContext = new ProjectContext())
+            {
+                //category = databaseContext.Categories.Find(id);
+                category = databaseContext.Categories.FirstOrDefault(i => i.Id.Equals(id));
+            }
+            return category;
         }
     }
 }
