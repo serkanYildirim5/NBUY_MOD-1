@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 using NBUY_MOD.DAL.Database;
@@ -28,6 +29,15 @@ namespace NBUY_MOD.DAL.Repository
                 category = databaseContext.Categories.FirstOrDefault(i => i.Id.Equals(id));
             }
             return category;
+        }
+
+        public bool EditCategory(Category category)
+        {
+            using (var databaseContext = new ProjectContext())
+            {
+                databaseContext.Entry(category).State = EntityState.Modified;
+                return databaseContext.SaveChanges() > 0;
+            }
         }
     }
 }

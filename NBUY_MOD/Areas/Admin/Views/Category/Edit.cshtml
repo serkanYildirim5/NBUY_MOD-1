@@ -1,15 +1,10 @@
-﻿@model Category
+﻿@model NBUY_MOD.Entities.DTO.CategoryDTO
 @{
     ViewBag.AdminTitle = "Kategori Düzenleme";
 }
 @section customAdminScripts {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
-    <script>
-        $(function () {
-            alert("Helloworld");
-        });
-    </script>
 }
 <hr />
 @using (Html.BeginForm("Edit", "Category", FormMethod.Post))
@@ -18,19 +13,20 @@
     @Html.AntiForgeryToken()
 
     <div class="form-row">
-        @Html.ValidationSummary()
+        @Html.ValidationSummary("", new { @class = "text-danger" })
     </div>
 
     <div class="form-row">
-        @Html.LabelFor(i => i.CategoryName, new { @class = "col-2" })
+        @Html.LabelFor(i => i.Name, new { @class = "col-2" })
         <div class="col-10">
-            @Html.TextBoxFor(i => i.CategoryName, new { @class = "form-control" })
+            @Html.TextBoxFor(i => i.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(i => i.Name, "", new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-row">
-        @Html.LabelFor(i => i.CategoryDescription, new { @class = "col-2" })
+        @Html.LabelFor(i => i.Description, new { @class = "col-2" })
         <div class="col-10">
-            @Html.TextBoxFor(i => i.CategoryDescription, new { @class = "form-control" })
+            @Html.TextBoxFor(i => i.Description, new { @class = "form-control" })
         </div>
     </div>
     <div class="form-row">

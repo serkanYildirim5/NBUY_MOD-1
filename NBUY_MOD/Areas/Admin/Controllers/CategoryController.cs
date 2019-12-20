@@ -1,5 +1,6 @@
 ﻿using System.Web.Mvc;
 
+using NBUY_MOD.Entities.DTO;
 using NBUY_MOD.Entities.Entity;
 using NBUY_MOD.Helpers.Extensions;
 using NBUY_MOD.Services;
@@ -40,14 +41,14 @@ namespace NBUY_MOD.Areas.Admin.Controllers
             if (category == null)
                 return HttpNotFound();
 
-            return View(category);
+            return View(category.GetCategoryDto());
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id , Category category)
+        public ActionResult Edit(int id, CategoryDTO categoryDto)
         {
-            if (id != category.Id)
+            if (id != categoryDto.Id)
                 return new HttpNotFoundResult();
 
             if (!ModelState.IsValid)
@@ -56,7 +57,11 @@ namespace NBUY_MOD.Areas.Admin.Controllers
                 return View();
             }
 
-            return View();
+            var category = categoryDto.GetCategory();
+
+            _categoryServices.EditCategory(category);
+
+            return RedirectToAction(nameof(Index));
         }
     }
 }

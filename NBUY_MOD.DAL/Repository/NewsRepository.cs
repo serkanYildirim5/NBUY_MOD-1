@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 using NBUY_MOD.DAL.Database;
@@ -13,7 +14,9 @@ namespace NBUY_MOD.DAL.Repository
             List<News> news;
             using (ProjectContext databaseContext = new ProjectContext())
             {
-                news = databaseContext.News.ToList();
+                //news = databaseContext.News.ToList();
+                //news = databaseContext.News.Include(i => i.Category).ToList();
+                news = databaseContext.News.Include("Category").ToList();
             }
 
             return news;
