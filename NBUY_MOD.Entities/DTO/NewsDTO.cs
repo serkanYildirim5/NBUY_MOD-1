@@ -9,5 +9,8 @@
         public string NewsImagePath { get; set; }
 
         public string NewsInformation { get; set; }
+
+        public string CategoryName { get; set; }
+
     }
 }

@@ -28,7 +28,8 @@ namespace NBUY_MOD.Helpers.Extensions
                 NewsSubTitle = i.NewsSubTitle,
                 NewsTitle = i.NewsTitle,
                 NewsImagePath = i.NewsImagePath,
-                NewsInformation = i.NewsContent.Substring(0, 20)
+                NewsInformation = i.NewsContent.Substring(0, 20),
+                CategoryName = i.Category.CategoryName
             }).ToList();
 
             return newsList;

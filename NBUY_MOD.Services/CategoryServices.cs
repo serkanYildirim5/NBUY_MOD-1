@@ -55,5 +55,13 @@ namespace NBUY_MOD.Services
 
             return result;
         }
+
+        public void EditCategory(Category category)
+        {
+            if (category == null)
+                return;
+
+            _categoryRepository.EditCategory(category);
+        }
     }
 }

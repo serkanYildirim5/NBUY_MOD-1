@@ -10,13 +10,38 @@ namespace NBUY_MOD.Helpers.Extensions
     {
         public static List<CategoryDTO> GetCategoryDto(this IEnumerable<Category> categories)
         {
-            var categoryDtos = categories.Select(i => new CategoryDTO
+            var categoryDto = categories.Select(category => new CategoryDTO
             {
-                CategoryName = i.CategoryName
+                Id = category.Id,
+                Name = category.CategoryName,
+                Description = category.CategoryDescription
             }).ToList();
 
-            return categoryDtos;
+            return categoryDto;
         }
 
+        public static CategoryDTO GetCategoryDto(this Category category)
+        {
+            var categoryDto = new CategoryDTO
+            {
+                Id = category.Id,
+                Name = category.CategoryName,
+                Description = category.CategoryDescription
+            };
+
+            return categoryDto;
+        }
+
+        public static Category GetCategory(this CategoryDTO categoryDto)
+        {
+            var category = new Category
+            {
+                Id = categoryDto.Id,
+                CategoryName = categoryDto.Name,
+                CategoryDescription = categoryDto.Description
+            };
+
+            return category;
+        }
     }
 }
